@@ -2,8 +2,16 @@ import React from "react";
 import "../Checkout.css";
 import Subtotal from "./Subtotal"
 import CheckoutProduct from "./CheckoutProduct"
-import { ListItemAvatar } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
+// import FlipMove from 'react-flip-move';
+
+// const topBasket = ({ basket }) => {
+//   <FlipMove>
+//     {basket.map(item => (
+//       <Basket key={item.id} {...item}/>
+//     ))}
+//   </FlipMove>
+// }
 
 function Checkout() {
 
