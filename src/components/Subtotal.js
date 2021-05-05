@@ -1,15 +1,19 @@
 import React from 'react';
 import CurrencyFormat from "react-currency-format";
 import '../Subtotal.css'
-import { useStateValue } from "../StateProvider";
-import { getBasketTotal } from '../reducer';
+import { getBasketTotal } from '../store/reducers/reducer';
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux"
 
 function Subtotal() {
   //useHistory gives you access to the browser history
   //different than Link - if you want to 'push' the user somewhere you can use history.push('/wherever')
   const history = useHistory()
-  const [{ basket }, dispatch] = useStateValue()
+  const user = useSelector(state => state.user)
+  const basket = useSelector(state => state.basket)
+
+  const total = getBasketTotal(basket)
+  console.log(total)
 
     return (
         <div className="subtotal">
@@ -35,5 +39,12 @@ function Subtotal() {
         </div>
     )
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     user: state.user,
+//     basket: state.basket
+//   }
+// }
 
 export default Subtotal

@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import '../Orders.css'
 import { db } from "../firebase"
-import { useStateValue } from "../StateProvider";
-import { FormHelperText } from "@material-ui/core";
 import Order from './Order'
+import { connect } from 'react-redux';
 
-function Orders() {
+function Orders(props) {
 
+    //initalizing local state for orders
     const [orders, setOrders] = useState([]);
-    const [{ basket, user }, dispatch] = useStateValue();
+
+    const user = props.user
 
     useEffect(() => {
-        if(user) {
+        if(props.user) {
             db
             .collection('users')
             .doc(user?.uid)
@@ -43,4 +44,10 @@ function Orders() {
     )
 }
 
-export default Orders
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(Orders)

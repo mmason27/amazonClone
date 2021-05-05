@@ -1,25 +1,22 @@
 import React from "react";
 import "../Product.css";
-import { useStateValue } from "../StateProvider";
+import { useDispatch } from 'react-redux';
+import { addToBasket } from "../store/actionTypes/actionTypes"
 
-function Product({ id, title, image, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue()
+function Product({ id, image, price, rating, title }) {
 
-  const addToBasket = () => {
-    //dispatch the item into the global store
-    dispatch({
-      type: 'ADD_TO_BASKET',
-      item: {
+  const dispatch = useDispatch()
+  const addItemToBasket = () => {
+    dispatch(addToBasket({
         id: id,
-        title: title,
         image: image,
         price: price,
-        rating: rating
-      }
-    })
+        rating: rating,
+        title: title
+    }))
   }
-
-  return (
+    
+  return(
     <div className="product">
       <div className="product__info">
         <p>{title}</p>
@@ -31,7 +28,7 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>🌟</p>
+              <p key={i}>🌟</p>
             ))}
         </div>
       </div>
@@ -39,9 +36,23 @@ function Product({ id, title, image, price, rating }) {
         src={image}
         alt=""
       ></img>
-      <button onClick={addToBasket}>Add To Basket</button>
+      <button onClick={addItemToBasket}>Add To Basket</button>
     </div>
-  );
+  )
 }
+
+// const mapStateToProps = (state) => {
+//   return{
+//     item: state.items
+//   }
+// }
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addToBasket: (item) => { 
+//       dispatch(addToBasket(item))
+//     }
+//   }
+// };
 
 export default Product;

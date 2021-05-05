@@ -1,20 +1,30 @@
 import React from 'react';
 import '../CheckoutProduct.css'
-import { useStateValue } from "../StateProvider";
+import { useDispatch } from 'react-redux';
+import { removeFromBasket } from '../store/actionTypes/actionTypes';
 
-function CheckoutProduct({ id, image, title, price, rating,hideButton }) {
+function CheckoutProduct({ id, title, price, rating, image }) {
 
-    const [{ basket }, dispatch] = useStateValue()
-
-    const removeFromBasket = () => {
-        dispatch({
-            type: 'REMOVE_FROM_BASKET',
-            id: id
-        })
+    console.log(id)
+    const dispatch = useDispatch()
+    const removeItemFromBasket = () => {
+        dispatch(removeFromBasket({
+            id
+        }))
     }
 
-    return (
-        <div className="checkoutProduct">
+    // const removeFromBasket = (id) => {
+    //     props.onRemoveFromBasket(id)
+        // dispatch({
+        //     type: 'REMOVE_FROM_BASKET',
+        //     id: id
+        // })
+
+    // }
+
+    // let itemList = props.items.map(item => {
+        return (
+            <div className="checkoutProduct">
             <img src={image} className="checkoutProduct__image"></img>
 
             <div className="checkoutProduct__info">
@@ -27,16 +37,13 @@ function CheckoutProduct({ id, image, title, price, rating,hideButton }) {
                     {Array(rating)
                     .fill()
                     .map((_, i) => (
-                        <p>🌟</p>
+                        <p key={i}>🌟</p>
                     ))}
                 </div>
-                {/* only render if it's not hidden */}
-                {hideButton && (
-                    <button onClick={removeFromBasket}>Remove From Basket</button>
-                )}
+                <button onClick={removeItemFromBasket}>Remove From Basket</button>
             </div>
         </div>
-    )
-}
+        )
+    }   
 
 export default CheckoutProduct
