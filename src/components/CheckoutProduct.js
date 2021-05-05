@@ -1,16 +1,23 @@
 import React from 'react';
 import '../CheckoutProduct.css'
 import { useDispatch } from 'react-redux';
-import { removeFromBasket } from '../store/actionTypes/actionTypes';
+// import { removeFromBasket } from '../store/actionTypes/actionTypes';
+import reducer from "../store/reducers/reducer"
 
 function CheckoutProduct({ id, title, price, rating, image }) {
 
     console.log(id)
     const dispatch = useDispatch()
+    // const removeItemFromBasket = () => {
+    //     dispatch(removeFromBasket({
+    //         id
+    //     }))
+    // }
     const removeItemFromBasket = () => {
-        dispatch(removeFromBasket({
-            id
-        }))
+        dispatch({
+            type: 'REMOVE_FROM_BASKET',
+            id: id
+        })
     }
 
     // const removeFromBasket = (id) => {
@@ -25,7 +32,7 @@ function CheckoutProduct({ id, title, price, rating, image }) {
     // let itemList = props.items.map(item => {
         return (
             <div className="checkoutProduct">
-            <img src={image} className="checkoutProduct__image"></img>
+            <img src={image} className="checkoutProduct__image" alt="The product for sale"></img>
 
             <div className="checkoutProduct__info">
                 <p className="checkoutProduct__title">{title}</p>

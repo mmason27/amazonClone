@@ -8,8 +8,9 @@ function Orders(props) {
 
     //initalizing local state for orders
     const [orders, setOrders] = useState([]);
-
     const user = props.user
+
+    console.log(orders)
 
     useEffect(() => {
         if(props.user) {

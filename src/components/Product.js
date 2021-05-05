@@ -1,20 +1,34 @@
 import React from "react";
 import "../Product.css";
 import { useDispatch } from 'react-redux';
-import { addToBasket } from "../store/actionTypes/actionTypes"
+// import { addToBasket } from "../store/actionTypes/actionTypes"
 
 function Product({ id, image, price, rating, title }) {
 
   const dispatch = useDispatch()
+  // const addItemToBasket = () => {
+  //   dispatch(addToBasket({
+  //       id: id,
+  //       image: image,
+  //       price: price,
+  //       rating: rating,
+  //       title: title
+  //   }))
+  // }
+
   const addItemToBasket = () => {
-    dispatch(addToBasket({
+    // dispatch the item into the data layer
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
         id: id,
+        title: title,
         image: image,
         price: price,
         rating: rating,
-        title: title
-    }))
-  }
+      },
+    });
+  };
     
   return(
     <div className="product">

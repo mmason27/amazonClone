@@ -5,8 +5,10 @@ import moment from "moment"
 import CheckoutProduct from "./CheckoutProduct"
 // CF is a react component to format number in an input or as a text
 import CurrencyFormat from "react-currency-format"
-
+//7:51
 function Order({ order }) {
+
+    
 
     return (
         <div className='order'>
@@ -17,7 +19,7 @@ function Order({ order }) {
             </p>
             {order.data.basket?.map(item => (
                 <CheckoutProduct
-                    id={item.id}
+                    key={item.id}
                     title={item.title}
                     image={item.image}
                     price={item.price}

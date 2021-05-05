@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../Checkout.css";
 import Subtotal from "./Subtotal"
 import CheckoutProduct from "./CheckoutProduct"
@@ -8,7 +7,6 @@ function Checkout() {
   
   const user = useSelector(state => state.user)
   const basket = useSelector(state => state.basket)
-  console.log(basket)
 
   return (
     <div className="checkout">
@@ -24,12 +22,17 @@ function Checkout() {
           <h2 className="checkout__title">Your shopping Basket</h2>
           {basket?.map(item => (
             <CheckoutProduct
-              key={item.item.id}
-              id={item.item.id}
-              title={item.item.title}
-              image={item.item.image}
-              price={item.item.price}
-              rating={item.item.rating}
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              image={item.image}
+              price={item.price}
+              rating={item.rating}
+              // id={item.item.id}
+              // title={item.item.title}
+              // image={item.item.image}
+              // price={item.item.price}
+              // rating={item.item.rating}
             />
           ))} 
 
