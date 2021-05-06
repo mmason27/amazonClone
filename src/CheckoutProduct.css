@@ -1,6 +1,6 @@
 .checkoutProduct {
     display: flex;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
@@ -30,3 +30,11 @@
     font-size: 17px;
     font-weight: 800;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    html {
+        display: flex;
+    }
+    
+  }

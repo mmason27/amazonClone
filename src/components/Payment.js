@@ -117,12 +117,12 @@ function Payment() {
             <div className="payment__items">
               {basket?.map(item => (
                 <CheckoutProduct
-                  key={item.item.id}
-                  id={item.item.id}
-                  title={item.item.title}
-                  image={item.item.image}
-                  price={item.item.price}
-                  rating={item.item.rating}
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  price={item.price}
+                  rating={item.rating}
                 />
               ))}
             </div>

@@ -24,7 +24,7 @@
 }
 
 .product > button {
-    background: orange;
+    background: rgb(50, 175, 50);
     border: 1px solid;
     margin-top: 10px;
     border-color: orange;
@@ -39,3 +39,11 @@
     height: 100px;
     margin-bottom: 15px;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    html {
+        display: flex;
+    }
+    
+  }

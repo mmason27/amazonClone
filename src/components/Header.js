@@ -5,6 +5,7 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase"
 import { useSelector } from "react-redux"
+import header from "../Assets/bosquelogo.png"
 
 function Header() {
 
@@ -21,8 +22,8 @@ function Header() {
   return (
     <div className="header">
       <Link to="/">
-        <img
-          src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
+        <img src={header}
+        // src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
           className="header__logo" alt="The Amazon banner"
         ></img>
       </Link>
@@ -48,10 +49,10 @@ function Header() {
         </div>
       </Link>
 
-        <div className="header__option">
+        {/* <div className="header__option">
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
-        </div>
+        </div> */}
 
         <Link to="/checkout">
           <div className="header__optionBasket">

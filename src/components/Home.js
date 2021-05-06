@@ -11,51 +11,60 @@ function Home() {
           <div className="home__row">
           <Product
             id="12321341"
-            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
-            price={11.96}
+            title="Monstera Plant"
+            price={30.99}
             rating={5}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+            image="https://images.thdstatic.com/productImages/2057e277-4afc-4fff-a34d-7f77bcc312e0/svn/united-nursery-house-plants-21887-64_1000.jpg"
           />
           <Product
             id="49538094"
-            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
-            price={239.0}
+            title="Spider Plant"
+            price={11.99}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+            image="https://images-na.ssl-images-amazon.com/images/I/61PPYUoc2aL._AC_SL1000_.jpg"
           />
         </div>
 
         <div className="home__row">
           <Product
             id="4903850"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
-            price={199.99}
-            rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+            title="Snake Plant"
+            price={12.99}
+            rating={4}
+            image="http://mobileimages.lowes.com/product/converted/100265/1002654958.jpg"
           />
           <Product
             id="23445930"
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-            price={98.99}
+            title="Golden Pothos"
+            price={16.99}
             rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            image="http://mobileimages.lowes.com/product/converted/100160/1001601144.jpg"
+            // image="https://i.etsystatic.com/14339179/r/il/e626c6/2322638407/il_570xN.2322638407_4fsx.jpg"
           />
           <Product
             id="3254354345"
-            title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
-            price={598.99}
+            title="Aloe Vera"
+            price={13.99}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+            image="https://assets.eflorist.com/site/EF-2287/assets/products/PHR_/sku6701208.jpg"
           />
         </div>
 
         <div className="home__row">
           <Product
             id="90829332"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
-            price={1094.98}
+            title="Fiddle Leaf Fig"
+            price={29.99}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
+            image="http://mobileimages.lowes.com/product/converted/100248/1002482888.jpg"
+          />
+          <Product
+            id="23445930"
+            title="Golden Pothos"
+            price={16.99}
+            rating={5}
+            image="http://mobileimages.lowes.com/product/converted/100160/1001601144.jpg"
+            // image="https://i.etsystatic.com/14339179/r/il/e626c6/2322638407/il_570xN.2322638407_4fsx.jpg"
           />
         </div>
       </div>
