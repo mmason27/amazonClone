@@ -40,11 +40,4 @@ function Subtotal() {
     )
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     user: state.user,
-//     basket: state.basket
-//   }
-// }
-
 export default Subtotal

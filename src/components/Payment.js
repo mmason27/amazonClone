@@ -29,6 +29,9 @@ function Payment() {
   useEffect(() => {
     //generate the special stripe secret that allows us to charge a customer
 
+    const total = getBasketTotal(basket) * 100
+    console.log(total)
+    
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
@@ -132,8 +135,6 @@ function Payment() {
         {/* Payment section - payment method */}
         <div className="payment__section">
           <div className="payment__title">
-            <h3>Payment Method</h3>
-            <h3>{getBasketTotal(basket)}</h3>
           </div>
           <div className="payment__details">
             {/* Stripe magic will go */}

@@ -8,6 +8,7 @@
     background-color: #f3f3f3;
     border: 1px solid #dddddd;
     border-radius: 3px;
+    margin-left: 10px;
   }
   
   .subtotal__gift {
@@ -26,6 +27,6 @@
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    border-color: rgb(38, 124, 38);
     color: #111;
   }

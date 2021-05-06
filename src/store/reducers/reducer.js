@@ -4,13 +4,8 @@ const initialState = {
     user: null,
 }
 
-export const getBasketTotal = (basket) => {
-  // const total = basket?.reduce((amount, item) => item.item.price + amount, 0);
-  const total = basket?.reduce((amount, item) => item.price + amount, 0);
-  console.log(total)
-  console.log(basket)
-  return total
-}
+export const getBasketTotal = (basket) => 
+  basket?.reduce((amount, item) => item.price + amount, 0);
   
 
 const reducer = (state = initialState, action) => {
@@ -20,7 +15,6 @@ const reducer = (state = initialState, action) => {
           ...state,
           basket: [...state.basket, action.item],
         };
-        //was basket: [...state.basket, action.payload] before
 
         case "EMPTY_BASKET":
             return {
@@ -46,17 +40,6 @@ const reducer = (state = initialState, action) => {
             ...state,
             basket: newBasket
           }
-          // Copy the existing State
-          // let newBasket = [...state.basket]
-
-          // Return back a new array
-          // newBasket.filter((basketItem) =>
-          //   basketItem.item.id !== action.payload.id)
-
-          // return {
-          //   ...state,
-          //   basket: newBasket
-          // }
     
     case "SET_USER":
       return {

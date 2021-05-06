@@ -3,6 +3,7 @@ import '../Login.css'
 import { Link, useHistory } from "react-router-dom"
 import { useState } from 'react'
 import { auth } from "../firebase"
+import header from "../Assets/bosquelogoinblack.png"
 
 function Login () {
     const history = useHistory();
@@ -35,7 +36,7 @@ function Login () {
     return (
         <div className="login">
             <Link to="/">
-                <img className="login__logo" src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' alt="The Amazon logo"/>
+                <img className="login__logo" src={header} alt="The bosque logo"/>
             </Link>
 
         <div className="login__container">
@@ -49,10 +50,10 @@ function Login () {
             </form>
 
             <p>
-                By singing in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
+                By singing in you agree to our Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
             </p>
 
-            <button onClick={register} className="login__registerButton">Create an Amazon account</button>
+            <button onClick={register} className="login__registerButton">Create a Bosque account</button>
         </div>
         </div>
     )
