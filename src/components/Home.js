@@ -8,7 +8,6 @@ function Home() {
   <div className="home">
       <div className="home__container">
           <img src={header} className="home__image"></img>
-          {/* <img src="https://www.junglescout.com/wp-content/uploads/2020/05/Prime-day-banner.png" alt="Homepage banner display ad for amazon prime paid service" className="home__image"></img> */}
 
           <div className="home__row">
           <Product

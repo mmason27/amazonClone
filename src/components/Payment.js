@@ -35,7 +35,7 @@ function Payment() {
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
-        // Stripe expects the total in a currency subunits
+        // Stripe expects the total in currency subunits
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
@@ -88,7 +88,7 @@ function Payment() {
 
   const handleChange = (event) => {
     //listen for changes in the CardElement
-    //and display any erros as the customer types their card details
+    //and display any errors as the customer types their card details
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };

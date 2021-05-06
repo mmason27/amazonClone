@@ -1,20 +1,10 @@
 import React from "react";
 import "../Product.css";
 import { useDispatch } from 'react-redux';
-// import { addToBasket } from "../store/actionTypes/actionTypes"
 
 function Product({ id, image, price, rating, title }) {
 
   const dispatch = useDispatch()
-  // const addItemToBasket = () => {
-  //   dispatch(addToBasket({
-  //       id: id,
-  //       image: image,
-  //       price: price,
-  //       rating: rating,
-  //       title: title
-  //   }))
-  // }
 
   const addItemToBasket = () => {
     // dispatch the item into the data layer
@@ -50,23 +40,9 @@ function Product({ id, image, price, rating, title }) {
         src={image}
         alt=""
       ></img>
-      <button onClick={addItemToBasket}>Add To Basket</button>
+      <button onClick={addItemToBasket}>Add To Cart</button>
     </div>
   )
 }
-
-// const mapStateToProps = (state) => {
-//   return{
-//     item: state.items
-//   }
-// }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addToBasket: (item) => { 
-//       dispatch(addToBasket(item))
-//     }
-//   }
-// };
 
 export default Product;

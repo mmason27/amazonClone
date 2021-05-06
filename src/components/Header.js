@@ -23,7 +23,6 @@ function Header() {
     <div className="header">
       <Link to="/">
         <img src={header}
-        // src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
           className="header__logo" alt="The Amazon banner"
         ></img>
       </Link>
@@ -34,7 +33,6 @@ function Header() {
       </div>
 
       <div className="header__nav">
-        {/* header options are referring to 'sign in', etc. like an option inside the navbar */}
         <Link to={!user && "/login"}>
           <div onClick={handleAuthentication} className="header__option">
             <span className="header__optionLineOne">Hello, {user ? user.email : 'Guest'}</span>
