@@ -28,9 +28,6 @@ function Payment() {
 
   useEffect(() => {
     //generate the special stripe secret that allows us to charge a customer
-
-    const total = getBasketTotal(basket) * 100
-    console.log(total)
     
     const getClientSecret = async () => {
       const response = await axios({
@@ -45,7 +42,7 @@ function Payment() {
   }, [basket]);
 
   console.log("THE SECRET IS >>>", clientSecret);
-  console.log("The user is ", user);
+  console.log("The user is >>>", user);
 
   const handleSubmit = async (event) => {
     //preventDefault prevents it from refreshing

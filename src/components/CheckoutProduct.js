@@ -1,7 +1,6 @@
 import React from 'react';
 import '../CheckoutProduct.css'
 import { useDispatch } from 'react-redux';
-import reducer from "../store/reducers/reducer"
 
 function CheckoutProduct({ id, title, price, rating, image }) {
 
